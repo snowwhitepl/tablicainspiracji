@@ -131,6 +131,13 @@ body {
   .deleteBtn {
     background-color: #c19a6b;
   }
+
+  .visitor-counter {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    opacity: 0.6;
+  }
    
   @media (max-width: 500px) {
     .content-box {
