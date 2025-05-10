@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tablica Inspiracji</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <img src="img/logo.png" alt="Logo" class="logo" />
+    <div class="content-box">
+      <p>Tutaj znajdziesz obrazy, kolory i pomysły, które mnie inspirują.</p>
+
+      <div id="filters">
+        <button data-category="Wszystko">Wszystko</button>
+        <button data-category="Moda">Moda</button>
+        <button data-category="Kolor">Kolor</button>
+        <button data-category="Forma">Forma</button>
+      </div>
+
+      <input type="file" id="imageInput" accept="image/*" />
+      <button id="clearGallery">Usuń wszystkie inspiracje</button>
+
+      <div id="gallery" class="gallery"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <div style="height: 50px;"></div>
+</body>
+</html>
