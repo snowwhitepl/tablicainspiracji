@@ -125,3 +125,30 @@ body {
   .deleteBtn {
     background-color: #c19a6b;
   }
+   
+  @media (max-width: 600px) {
+    .content-box {
+      padding: 20px;
+      margin: 20px;
+    }
+  
+    .logo {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .gallery {
+      gap: 15px;
+    }
+  
+    .gallery-item {
+      width: 100% !important;
+      transform: none !important;
+    }
+  
+    .gallery-item::before {
+      width: 60px;
+      height: 16px;
+      top: -8px;
+    }
+  }
