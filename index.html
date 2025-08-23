@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tablica Inspiracji</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tablica Inspiracji</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <img src="img/logo.png" alt="Logo" class="logo" />
-    <div class="content-box">
-      <p>Tutaj znajdziesz obrazy, kolory i pomysły, które mnie inspirują.</p>
+<div class="container">
+<h1 class="logo-text">TABLICA INSPIRACJI</h1>
 
-      <div id="filters">
-        <button data-category="Wszystko">Wszystko</button>
-        <button data-category="Moda">Moda</button>
-        <button data-category="Kolor">Kolor</button>
-        <button data-category="Forma">Forma</button>
-      </div>
+<div class="content-box">
+<p class="intro">Tutaj znajdziesz obrazy, kolory i pomysły, które mnie inspirują.</p>
 
-      <input type="file" id="imageInput" accept="image/*" />
-      <button id="clearGallery">Usuń wszystkie inspiracje</button>
+<div id="filters" class="btn-row">
+<button data-category="Wszystko" class="chip is-active">Wszystko</button>
+<button data-category="Moda" class="chip">Moda</button>
+<button data-category="Kolor" class="chip">Kolor</button>
+<button data-category="Forma" class="chip">Forma</button>
+</div>
 
-      <div id="gallery" class="gallery"></div>
-    </div>
-  </div>
+<input type="file" id="imageInput" accept="image/*" />
+<button id="clearGallery" class="btn-danger">Usuń wszystkie inspiracje</button>
 
-  <script src="script.js"></script>
-  <div style="height: 50px;"></div>
-  <div class="visitor-counter">
-    <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fsnowwhitepl.github.io%2Ftablicainspiracji&count_bg=transparent&title_bg=transparent&icon=none&title=Odwiedziny&edge_flat=false" alt="licznik odwiedzin" />
-  </div>
+<div id="gallery" class="gallery"></div>
+</div>
+</div>
+
+<script src="script.js"></script>
+
+<div class="visitor-counter">
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fsnowwhitepl.github.io%2Ftablicainspiracji&count_bg=transparent&title_bg=transparent&icon=none&title=Odwiedziny&edge_flat=false" alt="licznik odwiedzin" />
+</div>
 </body>
 </html>
