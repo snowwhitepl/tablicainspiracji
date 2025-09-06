@@ -1,98 +1,114 @@
 :root{
-  --clr-neutral: #F0E5DC; /* beż */
-  --clr-primary-2:#EAC8C2; /* jasny koral */
-  --clr-primary: #D47A72; /* koral */
-  --clr-dark: #563F40; /* ciemny brąz */
-  --clr-secondary:#E5C439; /* musztarda (opcjonalny akcent) */
-  --clr-white: #FFFFFF;
+  --bg: #d9da4e; /* żółty */
+  --pink: #d73878; /* róż dla tytułu */
+  --red: #e72700; /* podstawowy kolor przycisków */
+  --yellow: #d9da4e; /* aktywne/hover przyciski */
+  --ink:#2A2121; /* ciemny tekst */
+  --white:#ffffff;
   }
   
+  /* reset */
   *{ box-sizing:border-box; }
   
   body{
-  margin:0;
-  padding:0;
-  font-family:'Poppins',sans-serif;
-  color:var(--clr-dark);
-  
-  /* --- TŁO: płynny gradient (delikatny) --- */
-  background: linear-gradient(
-  to bottom,
-  var(--clr-neutral) 0%,
-  var(--clr-primary-2) 32%,
-  var(--clr-primary) 68%,
-  var(--clr-dark) 100%
-  );
-  /* softowanie przejścia, żeby dół nie był zbyt ciemny */
-  background-attachment: fixed; /* ładny efekt przy scrollu */
+  margin:0; padding:0;
+  font-family:'Poppins', sans-serif;
+  color:var(--ink);
+  background: var(--bg); /* jednolite tło */
   }
   
-  /* Nagłówek */
+  /* Nagłówek + układ */
   .container{ text-align:center; padding-top:40px; }
   
-  .logo-text{
-  font-size:2.7rem; font-weight:600;
-  color:var(--clr-dark); letter-spacing:.08em; margin:0 0 25px;
-  }
+  .logo-text {
+    font-family: 'Anton', sans-serif; /* lub Poppins 900 jeśli wolisz */
+    font-weight: 400; /* Anton ma jedną wagę, ale jest masywna */
+    font-size: clamp(48px, 8vw, 80px);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--pink);
+    margin-bottom: 25px;
+    
+    /* 🔥 Efekt WOW: cień + glow */
+    text-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.25),
+    0 0 8px rgba(215, 56, 120, 0.4),
+    0 0 16px rgba(215, 56, 120, 0.3),
+    0 0 28px rgba(215, 56, 120, 0.25);
+    }
   
   /* Karta */
   .content-box{
-  background-color:var(--clr-white);
+  background-color:var(--white);
   border-radius:22px;
-  box-shadow:0 12px 30px rgba(86,63,64,.12);
+  box-shadow:0 12px 30px rgba(0,0,0,.10);
   padding:30px; margin:0 auto 50px; max-width:820px;
-  border:1px solid rgba(86,63,64,.08);
+  border:1px solid rgba(0,0,0,.06);
   }
   
-  .intro{ font-size:1rem; color:rgba(86,63,64,.9); margin-bottom:22px; }
+  .intro{ font-size:1rem; color:rgba(0,0,0,.75); margin-bottom:22px; }
   
-  /* Filtry */
+  /* Filtry (chipy) */
   #filters{ margin-bottom:20px; }
-  #filters button{
-  margin:5px; padding:10px 16px; border:none; border-radius:12px;
-  background-color:var(--clr-primary-2); color:var(--clr-dark);
-  font-weight:600; cursor:pointer;
-  transition:transform .2s, background-color .3s, color .3s;
-  }
-  #filters button:hover{ background-color:var(--clr-primary); color:#fff; transform:scale(1.05); }
   
-  /* Input + przycisk */
-  #imageInput{ margin:16px 0 8px; }
+  #filters .chip,
   #clearGallery{
-  margin-top:10px; background-color:var(--clr-primary); color:#fff;
-  padding:10px 20px; border:none; border-radius:12px; cursor:pointer; font-weight:600;
-  transition:background-color .3s, transform .2s, box-shadow .2s;
+  margin:6px; padding:10px 16px;
+  border:none; border-radius:12px;
+  background-color:var(--red); /* czerwone */
+  color:#fff; font-weight:600; cursor:pointer;
+  transition:transform .15s ease, background-color .22s ease, color .22s ease, box-shadow .2s ease;
+  box-shadow:0 4px 10px rgba(0,0,0,.12);
   }
-  #clearGallery:hover{ background-color:#c2645d; transform:translateY(-1px); box-shadow:0 6px 14px rgba(212,122,114,.35); }
+  
+  #filters .chip:hover,
+  #filters .chip.is-active,
+  #clearGallery:hover{
+  background-color:var(--yellow); /* na żółte */
+  color:#111; /* czytelny tekst na żółtym */
+  transform:translateY(-1px);
+  }
+  
+  #filters .chip:focus-visible,
+  #clearGallery:focus-visible{
+  outline: 3px solid #111;
+  outline-offset: 2px;
+  }
+  
+  /* Input */
+  #imageInput{ margin:16px 0 8px; }
   
   /* Galeria */
-  .gallery{ display:flex; flex-wrap:wrap; justify-content:center; gap:22px; margin:20px 0; }
+  .gallery{
+  display:flex; flex-wrap:wrap; justify-content:center; gap:22px; margin:20px 0;
+  }
   .gallery-item{ position:relative; transition:transform .3s; cursor:grab; }
   .gallery-item img{
   width:100%; height:auto; border-radius:16px;
-  box-shadow:3px 6px 14px rgba(86,63,64,.18);
-  border:1px solid rgba(86,63,64,.08);
+  box-shadow:3px 6px 14px rgba(0,0,0,.18);
+  border:1px solid rgba(0,0,0,.06);
   }
-  /* Taśma washi */
+  /* Taśma washi – możesz zostawić jak jest, albo podmienić kolory na nową paletę */
   .gallery-item::before{
   content:''; width:80px; height:20px; background:var(--tape-color,#f7e8d7);
   position:absolute; top:-12px; left:50%; transform:translateX(-50%) rotate(-2deg);
-  box-shadow:0 1px 3px rgba(86,63,64,.25); border-radius:5px; z-index:2; opacity:.95;
+  box-shadow:0 1px 3px rgba(0,0,0,.25); border-radius:5px; z-index:2; opacity:.95;
   }
   
   /* Opisy + guziki */
-  .description{ margin-top:10px; font-size:.92em; color:var(--clr-dark); text-align:center; }
+  .description{ margin-top:10px; font-size:.92em; color:var(--ink); text-align:center; }
   .editBtn,.deleteBtn{
   margin-top:6px; border:none; border-radius:9px; color:#fff; padding:6px 12px;
-  cursor:pointer; margin-right:6px; font-size:.8rem; background-color:var(--clr-primary);
-  transition:filter .2s, transform .2s;
+  cursor:pointer; margin-right:6px; font-size:.8rem; background-color:var(--red);
+  transition:filter .2s, transform .2s, background-color .2s;
   }
-  .editBtn:hover{ filter:brightness(.9); transform:translateY(-1px); }
-  .deleteBtn{ background-color:#bf4850; }
-  .deleteBtn:hover{ filter:brightness(.9); transform:translateY(-1px); }
+  .editBtn:hover,.deleteBtn:hover{
+  background-color:var(--yellow); color:#111; transform:translateY(-1px);
+  }
+  .deleteBtn{}
   
   /* Licznik */
-  .visitor-counter{ text-align:center; margin:34px 0 40px; font-size:14px; opacity:.75; }
+  .visitor-counter{ text-align:center; margin:34px 0 40px; font-size:14px; opacity:.85; }
   
   /* Mobile */
   @media (max-width:500px){
@@ -101,50 +117,3 @@
   .gallery-item{ width:100% !important; transform:none !important; }
   .gallery-item::before{ width:60px; height:16px; top:-8px; }
   }
-   
-  .logo-text {
-font-family: 'Playfair Display', serif;
-font-size: clamp(32px, 6vw, 64px);
-font-weight: 700;
-text-transform: uppercase;
-letter-spacing: 2px;
-margin-bottom: 25px;
-text-align: center;
-
-/* gradientowe litery */
-background: linear-gradient(90deg, #D47A72, #EAC8C2, #C4A747, #D47A72);
-background-size: 300% 100%;
--webkit-background-clip: text;
-background-clip: text;
-color: transparent;
-
-/* świecący cień */
-text-shadow:
-0 0 6px rgba(212, 122, 114, .6),
-0 0 14px rgba(234, 200, 194, .5),
-0 0 28px rgba(196, 167, 71, .45);
-
-animation: gradientFlow 6s ease-in-out infinite,
-glowPulse 4s ease-in-out infinite;
-}
-
-/* przesuwający się gradient */
-@keyframes gradientFlow {
-0% { background-position: 0% 50%; }
-50% { background-position: 100% 50%; }
-100% { background-position: 0% 50%; }
-}
-
-/* pulsowanie blasku */
-@keyframes glowPulse {
-0%, 100% { text-shadow:
-0 0 6px rgba(212, 122, 114, .6),
-0 0 14px rgba(234, 200, 194, .5),
-0 0 28px rgba(196, 167, 71, .45);
-}
-50% { text-shadow:
-0 0 10px rgba(212, 122, 114, .9),
-0 0 22px rgba(234, 200, 194, .7),
-0 0 36px rgba(196, 167, 71, .6);
-}
-}
