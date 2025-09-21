@@ -21,14 +21,15 @@
   .container{ text-align:center; padding-top:40px; }
   
   .logo-text {
-    font-family: 'Anton', sans-serif; /* lub Poppins 900 jeśli wolisz */
-    font-weight: 400; /* Anton ma jedną wagę, ale jest masywna */
-    font-size: clamp(48px, 8vw, 80px);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--pink);
-    margin-bottom: 25px;
-    }
+  font-family: 'Anton', sans-serif; /* lub Poppins 900 jeśli wolisz */
+  font-weight: 400; /* Anton ma jedną wagę, ale jest masywna */
+  font-size: clamp(48px, 8vw, 80px);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--pink);
+  margin-bottom: 25px;
+  text-shadow: none; /* usuwa cień z napisu */
+  }
   
   /* Karta */
   .content-box{
@@ -81,7 +82,7 @@
   box-shadow:3px 6px 14px rgba(0,0,0,.18);
   border:1px solid rgba(0,0,0,.06);
   }
-  /* Taśma washi – możesz zostawić jak jest, albo podmienić kolory na nową paletę */
+  /* Taśma washi */
   .gallery-item::before{
   content:''; width:80px; height:20px; background:var(--tape-color,#f7e8d7);
   position:absolute; top:-12px; left:50%; transform:translateX(-50%) rotate(-2deg);
